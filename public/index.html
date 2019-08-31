@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body class="text-center">
+  <div class=container>
+    <header class="col">
+      <h1></br>Exercise Tracker</h1>
+    </header>
+    <div class="row">
+      <section class="col form-group bg-info" style="border-radius: 20%;">
+        <div>
+          <h3>Create New User</h3>
+          <h5>POST /api/exercise/new-user</h5>
+          <form action="/api/exercise/new-user" method="post">
+            <input id="uname" type="text" name="username" placeholder="username*">
+            <div>
+              <input type="submit" value="Create New Username" class="btn btn-dark">
+            </div>
+          </form>
+        </div>
+      </section>
+      <section class="col form-group bg-warning" style="border-radius: 20%;">
+        <div>
+          <h3>Add Exercises</h3>
+          <h5>POST /api/exercise/add</h5>
+          <form action="/api/exercise/add" method="post">
+            <div><input id="uid" type="text" name="username" placeholder="username*"></div>
+            <div><input id="desc" type="text" name="description" placeholder="description*"></div>
+            <div><input id="dur" type="text" name="duration" placeholder="duration* (mins.)"></div>
+            <div><input id="dat" type="text" name="date" placeholder="date (yyyy-mm-dd)"></div>
+            <div><input type="submit" value="Submit" class="btn btn-dark"></div>
+          </form>
+      </section>
+    </div>
+    <section>
+      GET users's exercise log: GET /api/exercise/log?{userId}[&from][&to][&limit]<br>
+      
+      { } = required, [ ] = optional <br>
+      
+      from, to = dates (yyyy-mm-dd); limit = number <br>
+    </section>
+    <section style="padding-top:30px;">
+      <a href="http://jasnamisimovic.me" target="_blank">
+        <img src="/img/logo.jpg" width="50">
+        <h6>jasnamisimovic.me</h6>
+      </a>
+      <h6>Technologies: Node, Express, MongoDB, Mongoose, JavaScript, HTML, CSS and Bootstrap</h6>
+    </section>
+  </div>
+</body>
+</html>
