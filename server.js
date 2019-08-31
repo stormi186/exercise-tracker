@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use(cors({ optionSuccessStatus: 200 }));
-var url = process.env.MONGODB_URI;
+var url = process.env.MONGOLAB_MAROON_URI;
 mongoose.connect(url || 'mongodb://localhost/exercise', { useNewUrlParser: true });
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
