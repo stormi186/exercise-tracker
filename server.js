@@ -131,25 +131,34 @@ app.get('/api/exercise/:log', (req, res) => {
 
   if (username === undefined) {
     res.send('Required Field(s) are missing.');
-  } else if (username === '') {
+  } 
+  else if (username === '') {
     res.send('Required Field(s) are blank.');
-  } else if (username.length > 10) {
+  } 
+  else if (username.length > 10) {
     res.send('Username cannot be greater than 10 characters');
-  } else if (from !== undefined && isNaN(Date.parse(from)) === true) {
+  } 
+  else if (from !== undefined && isNaN(Date.parse(from)) === true) {
     res.send('From is not a valid date');
-  } else if (to !== undefined && isNaN(Date.parse(to)) === true) {
+  } 
+  else if (to !== undefined && isNaN(Date.parse(to)) === true) {
     res.send('From is not a valid date');
-  } else if (limit !== undefined && isNaN(limit) === true) {
+  } 
+  else if (limit !== undefined && isNaN(limit) === true) {
     res.send('Limit is not a valid number');
-  } else if (limit !== undefined && Number(limit) < 1) {
+  } 
+  else if (limit !== undefined && Number(limit) < 1) {
     res.send('Limit must be greater than 0');
-  } else {
+  } 
+  else {
     User.findOne({ username }, (err, user) => {
       if (err) {
         res.send('Error while searching for username, try again');
-      } else if (!user) {
+      } 
+      else if (!user) {
         res.send('Username not found');
-      } else {
+      } 
+      else {
         userId = user.id;
         query.userId = userId;
 
